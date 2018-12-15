@@ -1,0 +1,13 @@
+﻿<Window x:Class="RSA_App.GUI.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RSA_App.GUI"
+        mc:Ignorable="d"
+        Title="Home" WindowStyle="ToolWindow" ResizeMode="NoResize" 
+        WindowState="Maximized">
+    <Grid>
+        
+    </Grid>
+</Window>
