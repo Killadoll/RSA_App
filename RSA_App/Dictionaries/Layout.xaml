@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:RSA_App.Dictionaries"
+                    xmlns:Chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart">
+
+    <Chart:ResourceDictionaryCollection x:Key="IncomePalette">
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="Brush1" Color="#80ff80" />
+        </ResourceDictionary>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="Brush2" Color="#ff6666" />
+        </ResourceDictionary>
+
+    </Chart:ResourceDictionaryCollection>
+
+</ResourceDictionary>

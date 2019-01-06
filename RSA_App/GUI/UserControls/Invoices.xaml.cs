@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RSA_App.GUI
+namespace RSA_App.GUI.UserControls
 {
     /// <summary>
-    /// Interaction logic for Home.xaml
+    /// Interaction logic for Invoices.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class Invoices : UserControl
     {
-        public Home()
+        public Invoices()
         {
             InitializeComponent();
         }

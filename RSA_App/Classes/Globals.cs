@@ -13,9 +13,7 @@ using System.Threading.Tasks;
 
 namespace RSA_App.Classes
 {
-    class Globals
-    {
-    }
+    class Globals{}
 
     /********************************************************************************/
 
@@ -26,12 +24,17 @@ namespace RSA_App.Classes
 
     /********************************************************************************/
 
-    public class ChartData
-    {
-        public string Month { get; set; }
-        public int Count { get; set; }
-    }
+    //public class ChartData
+    //{
+    //    public string Month { get; set; }
+    //    public int Count { get; set; }
+    //}
 
     /********************************************************************************/
+
+
+
+
+
 
 }

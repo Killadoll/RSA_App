@@ -17,5 +17,13 @@ X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\RSA_App.csproj.CoreCom
 X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\RSA_App.csproj.CopyComplete
 X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\RSA_App.exe
 X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\RSA_App.pdb
-X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\Home.g.cs
-X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\Home.baml
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\bin\Debug\HamburgerMenu.dll
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\MainWindow.g.cs
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\MainWindow.baml
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\bin\Debug\De.TorstenMandelkow.MetroChart.dll
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\UserControls\Home.g.cs
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\UserControls\Home.baml
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\UserControls\Invoices.g.cs
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\GUI\UserControls\Invoices.baml
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\Dictionaries\Layout.baml
+X:\MEGA\Ribbers Sloop en Asbest\RSA_App\RSA_App\obj\Debug\App.baml

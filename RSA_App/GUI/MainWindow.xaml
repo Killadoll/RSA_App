@@ -1,0 +1,135 @@
+﻿<Window x:Class="RSA_App.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RSA_App.GUI"
+        xmlns:HamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
+        mc:Ignorable="d"
+        Title="RSA Boekhoud App" 
+        ResizeMode="CanResize" 
+        WindowState="Maximized" 
+        Icon="/RSA_App;component/Icons/asbestos_icon.ico">
+
+    <!--Main Grid-->
+    <Grid Background="WhiteSmoke">
+        
+        <!--Grid for Pages-->
+        <Grid Margin="50,55,0,0">
+            
+            <Frame 
+                Name="MainFrame" 
+                NavigationUIVisibility="Hidden"/>
+            
+        </Grid>
+
+        <!--Grid for Logo, App Name and Username-->
+        <Grid 
+            Height="55" 
+            Background="SkyBlue" 
+            VerticalAlignment="Top">
+            
+            <!--Logo-->
+            <Image 
+                Source="/RSA_App;component/Images/logo_RSA_cropped.png" 
+                HorizontalAlignment="Left"/>
+             
+            <!--Labels Logo and CopyRight-->
+            <StackPanel 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left" 
+                Height="55" 
+                Margin="262,0,0,0" 
+                Width="200" 
+                Background="White">
+                
+                <TextBox BorderThickness="0" Height="12"/>
+                
+                    <Label 
+                        Height="25" 
+                        Content="Boekhoud App" 
+                        FontFamily="Gotham Black" 
+                        Foreground="SkyBlue" 
+                        FontSize="14" 
+                        BorderThickness="0" 
+                        HorizontalContentAlignment="Right" 
+                        VerticalContentAlignment="Center"/>
+                
+                    <Label 
+                        Height="20" 
+                        Content="Developed By: Natasja Krop © 2018-2019" 
+                        FontSize="8" 
+                        HorizontalContentAlignment="Right"
+                        FontStyle="Italic" 
+                        VerticalContentAlignment="Center"/>
+                
+            </StackPanel>
+
+            <!--Label with logged in user name (Future: menu options)-->
+            <StackPanel HorizontalAlignment="Right">
+                
+                <Label 
+                    Name="lblUser" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="stretch"
+                    FontFamily="Gotham" 
+                    Foreground="White" 
+                    FontSize="12"/>
+                
+            </StackPanel>            
+        </Grid>
+
+        <!--Grid for Hamburger menu-->
+        <Grid Margin="0,55,0,0">
+            
+            <HamburgerMenu:HamburgerMenu 
+                Background="#646464" 
+                MenuIconColor="White" 
+                SelectionIndicatorColor="White"                                     
+                MenuItemForeground="White" 
+                HorizontalAlignment="Left" 
+                MaxWidth="200">
+
+                <HamburgerMenu:HamburgerMenu.Content>
+                    
+                    <!--Home-->
+                    <HamburgerMenu:HamburgerMenuItem 
+                        Text="Home"
+                        Icon="/Icons/home_icon.ico"                          
+                        ListBoxItem.Selected="HamburgerMenuItem_Selected"/>
+                    
+                    <!--Invoices-->
+                    <HamburgerMenu:HamburgerMenuItem 
+                        Text="Facturen" 
+                        Icon="/Icons/invoice_icon.ico"                        
+                        ListBoxItem.Selected="HamburgerMenuItem_Selected_1" />
+                    
+                    <!--Debtors-->
+                    <HamburgerMenu:HamburgerMenuItem 
+                        Text="Debiteuren"
+                        Icon="/Icons/users_icon.ico" />
+                    
+                    <!--Balance-->
+                    <HamburgerMenu:HamburgerMenuItem 
+                        Text="Balans"
+                        Icon="/Icons/euro_icon.ico" />
+                    
+                    <!--Taxes VAT/BTW-->
+                    <HamburgerMenu:HamburgerMenuItem 
+                        Text="BTW"
+                        Icon="/Icons/tax_icon.ico" />
+                    
+                    <!--Overviews-->
+                    <HamburgerMenu:HamburgerMenuItem 
+                        Text="Overzichten"
+                        Icon="/Icons/profits_icon.ico" />
+                    
+                </HamburgerMenu:HamburgerMenu.Content>
+                
+            </HamburgerMenu:HamburgerMenu>
+            
+        </Grid>
+        
+    </Grid>
+    
+</Window>

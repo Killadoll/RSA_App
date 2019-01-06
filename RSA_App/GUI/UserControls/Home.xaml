@@ -1,0 +1,217 @@
+﻿<UserControl x:Class="RSA_App.GUI.UserControls.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RSA_App.GUI.UserControls"
+             xmlns:Chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="WhiteSmoke">
+
+    <ScrollViewer>
+
+        <Grid>
+            
+            <!--Define Columns of grid-->
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                
+            </Grid.ColumnDefinitions>
+
+            <!--Define Rows of grid-->
+            <Grid.RowDefinitions>
+                
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                
+            </Grid.RowDefinitions>
+
+            <!--Overview Year Income-->
+            <StackPanel
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalAlignment="Stretch"
+                Background="#80ff80"
+                Margin="10,10,5,10">
+
+                <Label
+                    x:Name="lblInYear"
+                    FontFamily="Gotham Black" 
+                    FontSize="14"
+                    Foreground="White"/>
+
+                <Label
+                    x:Name="lblTotalYearIn"
+                    FontFamily="Gotham Black" 
+                    FontSize="30"
+                    Foreground="White"/>
+                
+            </StackPanel>
+
+            <!--Overview Year Expenses-->
+            <StackPanel
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalAlignment="Stretch"
+                Background="#ff6666"
+                Margin="5,10,5,10">
+
+                <Label
+                    x:Name="lblOutYear"
+                    FontFamily="Gotham Black" 
+                    FontSize="14"
+                    Foreground="White"/>
+
+                <Label
+                    x:Name="lblTotalYearOut"
+                    FontFamily="Gotham Black" 
+                    FontSize="30"
+                    Foreground="White"/>
+
+            </StackPanel>
+
+            <!--Overview Month Income-->
+            <StackPanel
+                Grid.Row="0"
+                Grid.Column="2"
+                HorizontalAlignment="Stretch"
+                Background="#80ff80"
+                Margin="5,10,5,10">
+
+                <Label
+                    x:Name="lblInMonth"
+                    FontFamily="Gotham Black" 
+                    FontSize="14"
+                    Foreground="White" />
+
+                <Label
+                    x:Name="lblTotalMonthIn"
+                    FontFamily="Gotham Black" 
+                    FontSize="30"
+                    Foreground="White" />
+
+            </StackPanel>
+
+            <!--Overview Month Expenses-->
+            <StackPanel
+                Grid.Row="0"
+                Grid.Column="3"
+                HorizontalAlignment="Stretch"
+                Background="#ff6666"
+                Margin="5,10,5,10">
+
+                <Label
+                    x:Name="lblOutMonth"
+                    FontFamily="Gotham Black" 
+                    FontSize="14"
+                    Foreground="White" />
+
+                <Label
+                    x:Name="lblTotalMonthOut"
+                    FontFamily="Gotham Black" 
+                    FontSize="30"
+                    Foreground="White" />
+
+            </StackPanel>
+
+            <Label
+                Grid.Row="1" 
+                Grid.Column="2"
+                FontFamily="Gotham" 
+                FontSize="12"
+                HorizontalAlignment="Left"
+                Content="Kies een Jaar: "/>
+
+            <!--Choose year combobox-->
+            <ComboBox
+                x:Name="cbYear"
+                Grid.Row="1" 
+                Grid.Column="2"
+                HorizontalAlignment="Right"
+                SelectedValuePath="Content"
+                SelectionChanged="cbYear_SelectionChanged">
+
+                <!--<ComboBoxItem Content="2019"/>-->
+                <ComboBoxItem Content="2018"/>
+                <ComboBoxItem Content="2017"/>
+                <ComboBoxItem Content="2016"/>
+                <ComboBoxItem Content="2015"/>
+                
+            </ComboBox>
+
+            <Label
+                Grid.Row="1" 
+                Grid.Column="3"
+                FontFamily="Gotham" 
+                FontSize="12"
+                HorizontalAlignment="Left"
+                Content="Kies een Maand: " Margin="0.25,0,0,0" Width="117"/>
+
+            <!--Choose month combobox-->
+            <ComboBox
+                x:Name="cbMonth"
+                Grid.Row="1" 
+                Grid.Column="3"
+                HorizontalAlignment="Right"
+                SelectedValuePath="Content"
+                SelectionChanged="cbMonth_SelectionChanged" Margin="0,0,1.5,0">
+
+                <ComboBox.Style>
+                    <Style TargetType="ComboBox">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </Style>
+                </ComboBox.Style>
+
+                <ComboBoxItem Content="January"/>
+                <ComboBoxItem Content="February"/>
+                <ComboBoxItem Content="March"/>
+                <ComboBoxItem Content="April"/>
+                <ComboBoxItem Content="May"/>
+                <ComboBoxItem Content="June"/>
+                <ComboBoxItem Content="July" />
+                <ComboBoxItem Content="August"/>
+                <ComboBoxItem Content="September" />
+                <ComboBoxItem Content="October" />
+                <ComboBoxItem Content="November"/>
+                <ComboBoxItem Content="December" />
+
+            </ComboBox>
+
+            <!--Clustered Column Chart for Profit Overview-->
+            <Chart:ClusteredColumnChart 
+                x:Name="ChartBalence"
+                Grid.Row="2" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="4"
+                Width="Auto"
+                Height="400"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                IsRowColumnSwitched="True"
+                ChartTitle="Inkomen en Uitgaven"
+                ChartSubTitle="Jaarlijks overzicht"  
+                Palette="{StaticResource IncomePalette}"
+                SelectedBrush="Transparent"
+                SeriesSource="{Binding Series}">
+
+                <Chart:ClusteredColumnChart.SeriesTemplate>
+                    <DataTemplate>
+                        <Chart:ChartSeries 
+                            SeriesTitle="{Binding Path=DisplayName}"
+                            DisplayMember="Timespan"
+                            ValueMember="InOut"
+                            ItemsSource="{Binding Path=Items}"/>
+                    </DataTemplate>
+                </Chart:ClusteredColumnChart.SeriesTemplate>
+            </Chart:ClusteredColumnChart>           
+            
+        </Grid>
+    </ScrollViewer>
+</UserControl>

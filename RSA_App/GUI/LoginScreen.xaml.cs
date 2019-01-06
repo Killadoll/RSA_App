@@ -48,10 +48,9 @@ namespace RSA_App.GUI
                 // Hide this form
                 this.Hide();
 
-                // Open Dashboard
-                Home HomeGUI = new Home();
-                HomeGUI.Show();
-                this.Hide();
+                // Open Main Window
+                MainWindow MainWindowGUI = new MainWindow();
+                MainWindowGUI.Show();
             }
             else
             {
