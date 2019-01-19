@@ -49,6 +49,49 @@ namespace RSA_App.Classes
                                 END
             ";
 
+        // Get the current Balance in the Database
+        public static string queryGetBlance = @"
+                SELECT 
+	                sum(Amount) as dbAmount 
+    
+                FROM 
+	                tblbalance
+            ";
+
+        // Get amount of worked hours per debtor per year for Piechart
+        public static string queryGetWorkedHoursPerDebtor = @"
+                SELECT 
+	                Debtor as dBDebtor,
+                    SUM(Hours) as dBHours,
+                    YEAR(WorkDate) as dBYear
+    
+                FROM 
+	                tblhours
+    
+                WHERE
+	                YEAR(WorkDate) = @Year
+
+                GROUP BY
+                    Debtor
+
+            ";
+
+        // Get the Last Booking Date
+        public static string queryLastBookingDate = @"
+            SELECT 
+	            BookingDate as dbLastBookingDate
+    
+            FROM 
+	            tblbalance 
+    
+            WHERE
+	            idtblbalance= ( SELECT 
+						            max(idtblbalance)
+                    
+					            FROM
+						            tblbalance )            
+            ";
+
         // Calculate the amount of weeks since the last invoice
         public static string queryWeeksSinceInvoice = @"
                 SELECT 

@@ -75,8 +75,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Balance.cs" />
     <Compile Include="Classes\DBConnect.cs" />
-    <Compile Include="Classes\UpdateYearMonth.cs" />
+    <Compile Include="Classes\InvoiceClass.cs" />
+    <Compile Include="Classes\UpdateHome.cs" />
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\SqlString.cs" />
     <Compile Include="GUI\LoginScreen.xaml.cs">
@@ -157,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo_RSA_cropped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\sync_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

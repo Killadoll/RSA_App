@@ -3,14 +3,71 @@
                     xmlns:local="clr-namespace:RSA_App.Dictionaries"
                     xmlns:Chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart">
 
-    <Chart:ResourceDictionaryCollection x:Key="IncomePalette">
+    <!--Color scheme for ClusteredColumn Chart-->
+    <Chart:ResourceDictionaryCollection 
+        x:Key="IncomePalette">
+        
         <ResourceDictionary>
-            <SolidColorBrush x:Key="Brush1" Color="#80ff80" />
+            <SolidColorBrush 
+                x:Key="Brush1" 
+                Color="#80ff80" />
+            
         </ResourceDictionary>
+        
         <ResourceDictionary>
-            <SolidColorBrush x:Key="Brush2" Color="#ff6666" />
+            <SolidColorBrush 
+                x:Key="Brush2" 
+                Color="#ff6666" />
+            
         </ResourceDictionary>
 
     </Chart:ResourceDictionaryCollection>
+
+    <!--Header style for Listviews-->
+    <Style
+        x:Key="ListViewHeaderStyle"
+        TargetType="{x:Type GridViewColumnHeader}">
+
+        <Setter 
+            Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate
+                    TargetType="{x:Type GridViewColumnHeader}">
+
+                    <Border
+                        BorderThickness="0,0,0,1"
+                        BorderBrush="White"
+                        Background="Transparent">
+                        
+                        <TextBlock
+                            x:Name="ContentHeader"
+                            Text="{TemplateBinding Content}"
+                            Padding="5,5,5,0" 
+                            Width="{TemplateBinding Width}" 
+                            TextAlignment="Left" />
+
+                    </Border>
+                </ControlTemplate>                
+            </Setter.Value>
+        </Setter>
+
+        <Setter 
+            Property="OverridesDefaultStyle" 
+            Value="True" />
+        
+        <Setter 
+            Property="Foreground" 
+            Value="White" />
+        
+        <Setter 
+            Property="FontFamily" 
+            Value="Gotham" />
+        
+        <Setter 
+            Property="FontSize" 
+            Value="12" />
+        
+    </Style>
 
 </ResourceDictionary>

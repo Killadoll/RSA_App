@@ -105,5 +105,40 @@ namespace RSA_App.Classes
             }
             return Count;
         }
+
+        // Sums all the Currency in the database
+        public decimal Sums (string strSumsQuery)
+        {
+            decimal Sums = 0;
+
+            if (this.OpenConnection() == true)
+            {
+                SqlCommand = new MySqlCommand(strSumsQuery, SqlConnection);
+
+                Sums = (decimal)SqlCommand.ExecuteScalar();
+
+                this.CloseConnection();
+            }
+            return Sums;
+        }
+
+        // Get last booking date in database
+        public string LastBookingDate (string strLastBookingQuery)
+        {
+            DateTime dtTemp = new DateTime();
+            string strLastBookingDate = null;
+
+            if (this.OpenConnection() == true)
+            {
+                SqlCommand = new MySqlCommand(strLastBookingQuery, SqlConnection);
+
+                dtTemp = (DateTime)SqlCommand.ExecuteScalar();
+
+                strLastBookingDate = dtTemp.ToString("dd-MM-yyyy");
+
+                this.CloseConnection();
+            }
+            return strLastBookingDate;
+        }
     }
 }

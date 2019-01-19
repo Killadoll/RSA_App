@@ -6,29 +6,30 @@
              xmlns:local="clr-namespace:RSA_App.GUI.UserControls"
              xmlns:Chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="900"  d:DesignWidth="800"
              Background="WhiteSmoke">
 
     <ScrollViewer>
 
         <Grid>
-            
+
             <!--Define Columns of grid-->
             <Grid.ColumnDefinitions>
-                
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                
+
             </Grid.ColumnDefinitions>
 
             <!--Define Rows of grid-->
             <Grid.RowDefinitions>
-                
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="7*"/>              
+               
                 
             </Grid.RowDefinitions>
 
@@ -51,7 +52,7 @@
                     FontFamily="Gotham Black" 
                     FontSize="30"
                     Foreground="White"/>
-                
+
             </StackPanel>
 
             <!--Overview Year Expenses-->
@@ -82,7 +83,7 @@
                 Grid.Column="2"
                 HorizontalAlignment="Stretch"
                 Background="#80ff80"
-                Margin="5,10,5,10">
+                Margin="5,10,4.75,10">
 
                 <Label
                     x:Name="lblInMonth"
@@ -104,7 +105,7 @@
                 Grid.Column="3"
                 HorizontalAlignment="Stretch"
                 Background="#ff6666"
-                Margin="5,10,5,10">
+                Margin="5.25,10,3.5,10">
 
                 <Label
                     x:Name="lblOutMonth"
@@ -120,69 +121,77 @@
 
             </StackPanel>
 
-            <Label
-                Grid.Row="1" 
-                Grid.Column="2"
-                FontFamily="Gotham" 
-                FontSize="12"
-                HorizontalAlignment="Left"
-                Content="Kies een Jaar: "/>
+            <Grid
+                Grid.Column="3"
+                Grid.Row="1">
 
-            <!--Choose year combobox-->
-            <ComboBox
-                x:Name="cbYear"
-                Grid.Row="1" 
-                Grid.Column="2"
-                HorizontalAlignment="Right"
-                SelectedValuePath="Content"
-                SelectionChanged="cbYear_SelectionChanged">
-
-                <!--<ComboBoxItem Content="2019"/>-->
-                <ComboBoxItem Content="2018"/>
-                <ComboBoxItem Content="2017"/>
-                <ComboBoxItem Content="2016"/>
-                <ComboBoxItem Content="2015"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 
-            </ComboBox>
+                <Label
+                    Grid.Column="0"
+                    FontFamily="Gotham" 
+                    FontSize="12"
+                    HorizontalAlignment="Right"
+                    Content="Kies een Jaar: " Width="96"/>
 
-            <Label
-                Grid.Row="1" 
-                Grid.Column="3"
-                FontFamily="Gotham" 
-                FontSize="12"
-                HorizontalAlignment="Left"
-                Content="Kies een Maand: " Margin="0.25,0,0,0" Width="117"/>
+                <!--Choose year combobox-->
+                <ComboBox
+                    x:Name="cbYear"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    SelectedValuePath="Content"
+                    SelectionChanged="cbYear_SelectionChanged">
 
-            <!--Choose month combobox-->
-            <ComboBox
-                x:Name="cbMonth"
-                Grid.Row="1" 
-                Grid.Column="3"
-                HorizontalAlignment="Right"
-                SelectedValuePath="Content"
-                SelectionChanged="cbMonth_SelectionChanged" Margin="0,0,1.5,0">
+                    <!--<ComboBoxItem Content="2019"/>-->
+                    <ComboBoxItem Content="2018"/>
+                    <ComboBoxItem Content="2017"/>
+                    <ComboBoxItem Content="2016"/>
+                    <ComboBoxItem Content="2015"/>
 
-                <ComboBox.Style>
-                    <Style TargetType="ComboBox">
-                        <Setter Property="Visibility" Value="Collapsed"/>
-                        <Setter Property="Visibility" Value="Visible"/>
-                    </Style>
-                </ComboBox.Style>
+                </ComboBox>
 
-                <ComboBoxItem Content="January"/>
-                <ComboBoxItem Content="February"/>
-                <ComboBoxItem Content="March"/>
-                <ComboBoxItem Content="April"/>
-                <ComboBoxItem Content="May"/>
-                <ComboBoxItem Content="June"/>
-                <ComboBoxItem Content="July" />
-                <ComboBoxItem Content="August"/>
-                <ComboBoxItem Content="September" />
-                <ComboBoxItem Content="October" />
-                <ComboBoxItem Content="November"/>
-                <ComboBoxItem Content="December" />
+                <Label
+                    Grid.Column="2"
+                    FontFamily="Gotham" 
+                    FontSize="12"
+                    HorizontalAlignment="Right"
+                    Content="Kies een Maand: "/>
 
-            </ComboBox>
+                <!--Choose month combobox-->
+                <ComboBox
+                    x:Name="cbMonth"
+                    Grid.Column="3"
+                    HorizontalAlignment="Left"
+                    SelectedValuePath="Content"
+                    SelectionChanged="cbMonth_SelectionChanged">
+
+                    <ComboBox.Style>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </Style>
+                    </ComboBox.Style>
+
+                    <ComboBoxItem Content="January"/>
+                    <ComboBoxItem Content="February"/>
+                    <ComboBoxItem Content="March"/>
+                    <ComboBoxItem Content="April"/>
+                    <ComboBoxItem Content="May"/>
+                    <ComboBoxItem Content="June"/>
+                    <ComboBoxItem Content="July" />
+                    <ComboBoxItem Content="August"/>
+                    <ComboBoxItem Content="September" />
+                    <ComboBoxItem Content="October" />
+                    <ComboBoxItem Content="November"/>
+                    <ComboBoxItem Content="December" />
+
+                </ComboBox>
+            </Grid>
 
             <!--Clustered Column Chart for Profit Overview-->
             <Chart:ClusteredColumnChart 
@@ -191,7 +200,6 @@
                 Grid.Column="0" 
                 Grid.ColumnSpan="4"
                 Width="Auto"
-                Height="400"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 IsRowColumnSwitched="True"
@@ -199,7 +207,7 @@
                 ChartSubTitle="Jaarlijks overzicht"  
                 Palette="{StaticResource IncomePalette}"
                 SelectedBrush="Transparent"
-                SeriesSource="{Binding Series}">
+                SeriesSource="{Binding CCSeries}" Margin="0,0,-0.5,1">
 
                 <Chart:ClusteredColumnChart.SeriesTemplate>
                     <DataTemplate>
@@ -210,8 +218,255 @@
                             ItemsSource="{Binding Path=Items}"/>
                     </DataTemplate>
                 </Chart:ClusteredColumnChart.SeriesTemplate>
-            </Chart:ClusteredColumnChart>           
-            
+
+            </Chart:ClusteredColumnChart>
+
+            <!--Nested Grid for Current Balance overview-->
+            <Grid 
+                x:Name="Grid2"
+                Grid.Column="0"
+                Grid.Row="3"
+                Background="SkyBlue"
+                Margin="10,10,5,10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    FontFamily="Gotham" 
+                    FontSize="14"
+                    Foreground="White"
+                    Content="Balans Overzicht&#x0a;Huidige Saldo"/>
+
+                <Label
+                    x:Name="lblCurrentBalance"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    FontFamily="Gotham Black" 
+                    FontSize="30"
+                    Foreground="White"/>
+
+                <Image 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Source="/RSA_App;component/Icons/euro_icon.ico"
+                    Height="55"
+                    Width="55"
+                    HorizontalAlignment="Center"/>
+
+            </Grid>
+
+            <Grid 
+                x:Name="Grid3"
+                Grid.Column="1"
+                Grid.Row="3"
+                Background="#b16cf7"
+                Margin="5,10,5,10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    FontFamily="Gotham" 
+                    FontSize="14"
+                    Foreground="White"
+                    Content="Synchronisatie met bank&#x0a;Laatste Update:"/>
+
+                <Label
+                    x:Name="lblSyncDate"   
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    FontFamily="Gotham Black" 
+                    FontSize="30"
+                    Foreground="White"
+                    HorizontalAlignment="Left"/>
+
+                <Image
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Source="/RSA_App;component/Icons/sync_icon.ico"
+                    Height="55"
+                    Width="55"
+                    HorizontalAlignment="Center"/>
+
+                <TextBlock
+                    Grid.Column="1"
+                    Grid.Row="1"                    
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,10,10">
+                    
+                    <Hyperlink
+                        Click="TextBlock_Click"
+                        FontFamily="Gotham" 
+                        FontSize="11"
+                        Foreground="White"
+                        FontStyle="Italic">    
+                        
+                        Nu bijwerken
+                        
+                    </Hyperlink>
+
+                </TextBlock>
+            </Grid>
+
+            <!--Pie Chart for Worked Hours per year, per debtor Overview-->
+            <Chart:PieChart 
+                x:Name="PieChart"
+                Grid.Row="3" 
+                Grid.Column="2" 
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                Width="Auto"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                ChartSubTitle="Per debiteur"
+                SeriesSource="{Binding PCSeries}" Margin="0,3,-0.5,0">
+
+                <Chart:PieChart.SeriesTemplate>
+                    <DataTemplate>
+                        <Chart:ChartSeries 
+                            SeriesTitle="{Binding Path=DisplayName}"
+                            DisplayMember="Debtor"
+                            ValueMember="Hours"
+                            ItemsSource="{Binding Path=Items}"/>
+                    </DataTemplate>
+                </Chart:PieChart.SeriesTemplate>
+
+            </Chart:PieChart>
+
+            <Grid
+                Grid.Column="0"
+                Grid.Row="4"
+                Background="#b16cf7"
+                Margin=" 10,5,5,10">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10*"/>
+
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    FontFamily="Gotham Black" 
+                    FontSize="20"
+                    Foreground="White"
+                    HorizontalAlignment="Stretch"
+                    Content="Nog te versturen Facturen:"/>
+
+                <ListView
+                    x:Name="lstvUnsendInvoices"
+                    Grid.Row="1"
+                    HorizontalAlignment="Stretch"
+                    Background="Transparent"
+                    Foreground="White"
+                    BorderThickness="0"
+                    ItemsSource="{Binding lstUnsend}">
+
+                    <ListView.View>
+
+                        <GridView
+                        ColumnHeaderContainerStyle="{StaticResource ListViewHeaderStyle}">
+                            <GridViewColumn
+                            Header="Week"                            
+                            DisplayMemberBinding="{Binding Week}" />
+
+                            <GridViewColumn
+                            Header="Status" 
+                            DisplayMemberBinding="{Binding Status}"/>
+
+                            <GridViewColumn
+                            Header="Actie" 
+                            DisplayMemberBinding="{Binding Action}"/>
+
+                        </GridView>
+
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid
+                Grid.Column="1"
+                Grid.Row="4"
+                Background="SkyBlue"
+                Margin="5,5,5,10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10*"/>
+
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    FontFamily="Gotham Black" 
+                    FontSize="20"
+                    Foreground="White"
+                    HorizontalAlignment="Stretch"
+                    Content="Nog te ontvangen Facturen:"/>
+
+                <ListView
+                    x:Name="lstvUnpaidInvoices"
+                    Grid.Row="1"
+                    HorizontalAlignment="Stretch"
+                    Background="Transparent"
+                    Foreground="White"
+                    BorderThickness="0"
+                    ItemsSource="{Binding lstUnpaid}">
+
+                    <ListView.View>
+
+                        <GridView
+                            ColumnHeaderContainerStyle="{StaticResource ListViewHeaderStyle}">
+                            
+                            <GridViewColumn
+                                Header="Factuur"                            
+                                DisplayMemberBinding="{Binding Invoice}" />
+
+                            <GridViewColumn
+                                Header="Wie" 
+                                DisplayMemberBinding="{Binding Debtor}"/>
+
+                            <GridViewColumn
+                                Header="Bedrag" 
+                                DisplayMemberBinding="{Binding Amount}"/>
+
+                            <GridViewColumn
+                                Header="Uiterste betaaldatum" 
+                                DisplayMemberBinding="{Binding MaxDate}"/>
+
+                        </GridView>
+
+                    </ListView.View>
+                </ListView>
+
+            </Grid>
+
         </Grid>
     </ScrollViewer>
 </UserControl>
